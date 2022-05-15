@@ -18,3 +18,42 @@ in our dictionary.
 After each word is translated, we then
 print out the translated sentance to the user. 
 """
+
+"""
+main():
+  sentence = input ()
+  set dictionary = create_dictionary()
+  translate(sentence, dictionary)
+
+translate(sentence, dictionary):
+  words = for each of the word in the sentence,
+  for each words, translate the word
+  print trabslated sentence to user
+
+create dictionary():
+  read in textese.txt
+  create list = each line from the text file
+  close the file
+  create a dict off of the list
+  return the dict
+
+main()
+"""
+
+def main():
+    sentence = input("Enter a sentence: ")
+    dictionary = create_dictionary("textese.txt")
+    translate(sentence, dictionary)
+
+def create_dictionary(txt_file):
+    infile = open(txt_file, "r")
+    words = [word.rstrip() for word in infile]
+    infile.close()
+    return dict([word.split(",") for word in words])
+
+def translate(sentence, dictionary):
+    words = sentence.spit()
+    for word in words:
+        print(dictionary.get(word, word), " ", end="") 
+
+main()
